@@ -1,0 +1,30 @@
+.teaser-item {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ padding: rem(46 20);
+ position: relative;
+
+ &__title , &__info {
+  margin-bottom: rem(34);
+ }
+
+ &__decor {
+  border-radius: 50%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  &:after {
+   content: '';
+   padding-bottom: 100%;
+   display: block;
+  }
+ }
+}
+
+.teaser-item-col {
+ max-width: rem(381);
+}

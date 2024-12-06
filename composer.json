@@ -1,0 +1,16 @@
+{
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpstan/phpstan": "^1.12",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcsstandards/phpcsdevtools": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": ">=8.2"
+    }
+}

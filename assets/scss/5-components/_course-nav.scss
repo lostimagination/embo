@@ -1,0 +1,66 @@
+.course-nav__item {
+
+ &.active {
+  background-color: $primary;
+ }
+}
+
+.course-nav {
+ background: white;
+ border-radius: 50px;
+ display: flex;
+ justify-content: center;
+ padding: rem(0 10);
+ width: 100%;
+ margin: 0 auto;
+ position: relative;
+ top: auto;
+ left: auto;
+ transform: none;
+ box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+ max-width: calc(100% - 32px);
+
+ @include min(lg) {
+ gap: rem(90);
+ }
+
+ @include min(xl) {
+ max-width: rem(1214);
+ }
+
+ &.is-fixed {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ a {
+  text-decoration: none;
+  display: inline-block;
+  color: $neutral-purple-700;
+  font-size: rem(18);
+
+  @include min(lg) {
+   padding: rem(31 24);
+  }
+
+  &.active {
+   background-color: $neutral-purple-100;
+   font-weight: 500;
+  }
+
+  &:hover {
+   background: rgba(0, 0, 0, 0.03);
+  }
+ }
+}
+
+[id^="anchor-"] {
+ position: relative;
+ height: 1px;
+ visibility: hidden;
+ pointer-events: none;
+}
