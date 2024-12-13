@@ -177,7 +177,7 @@ gulp.task('toProd', function (done) {
  */
 gulp.task('actual-watch', function () {
 	browserSync.init({
-		proxy: 'https://starter-v3.my/', // Change it to your localhost url.
+		proxy: 'http://localhost/embolab/', // Change it to your localhost url.
 		port: 3000,
 		notify: false,
 		files: ['./*.php', './**/*.php'],

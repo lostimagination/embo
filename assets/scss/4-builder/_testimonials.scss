@@ -1,0 +1,14 @@
+.testimonials{
+	padding: rem(60 0);
+	@include min(lg) {
+		padding: rem(120 0);
+	}
+}
+.person-image{
+	height: 444px;
+	width: 444px;
+	object-fit: contain;
+	background-color: $secondary-turquois-500;
+	border-radius: 50%;
+
+}

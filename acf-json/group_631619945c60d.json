@@ -54,6 +54,102 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67588f8cb5c66": {
+                    "key": "layout_67588f8cb5c66",
+                    "name": "headline_and_text",
+                    "label": "Headline and Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67588fa1b5c69",
+                            "label": "Headline and Text clone",
+                            "name": "headline_and_text_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67588c5d9a73c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_675896510bf43": {
+                    "key": "layout_675896510bf43",
+                    "name": "company_logos",
+                    "label": "Company logos",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_675896580bf46",
+                            "label": "Company logos clone",
+                            "name": "company_logos_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_675895f74b2df"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67589d38755f5": {
+                    "key": "layout_67589d38755f5",
+                    "name": "testimonials",
+                    "label": "Testimonials",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67589d3c755f8",
+                            "label": "Testimonials clone",
+                            "name": "testimonials_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67589b33923b3"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_63b81f6380623": {
                     "key": "layout_63b81f6380623",
                     "name": "faq",
@@ -359,5 +455,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733154810
+    "modified": 1733860692
 }
