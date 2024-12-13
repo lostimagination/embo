@@ -1,44 +1,43 @@
 .btn {
 	@include tr;
-	height: rem(44);
+	height: rem(66);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: rem(12);
-	background-color: $primary;
-	color: $w;
-	font-size: rem(16);
-	font-weight: 700;
+	gap: rem(8);
+	background-color: $primary-500;
+	color: $neutral-purple-700;
+	font-size: rem(18);
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
 	line-height: 1;
-	border: 1px solid $primary;
-	border-radius: $radius;
-	padding: rem(0 16);
+	border: none;
+	padding: rem(24 36);
+	border-radius: 40px;
 	text-align: center;
 	cursor: pointer;
 
 	@include min(lg) {
 		font-size: rem(18);
-		height: rem(50);
-		padding: rem(0 24);
+		height: rem(66);
+		padding: rem(24 36);
 	}
 
-	@include min(xl) {
-		padding: rem(0 38);
-	}
 
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: $primary-hover;
-		border-color: $primary-hover;
-		color: $w;
-	}
+	//&:hover,
+	//&:focus,
+	//&:active {
+	//	background-color: $primary-hover;
+	//	border-color: $primary-hover;
+	//	color: $w;
+	//}
 
 	svg {
 		flex-shrink: 0;
-		width: rem(20);
-		height: rem(20);
+		width: rem(18);
+		height: rem(18);
 		transition: none;
+
 	}
 
 	&-secondary {
@@ -84,9 +83,9 @@
 	}
 
 	&-sm {
-		height: rem(40);
-		font-size: rem(14);
-		padding: rem(0 20);
+		height: rem(56);
+		font-size: rem(16);
+		padding: rem(19 24);
 	}
 
 	&-lg {
@@ -104,32 +103,41 @@
 	}
 }
 
+.btn-on-dark {
+	background-color: $w;
+
+}
+
 .btn-outline {
 	background-color: transparent;
-	border-color: $primary;
-	color: $primary;
+	border: 6px solid $primary-500;
 
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: $primary;
-		border-color: $primary;
-		color: $w;
-	}
+
+
+	//&:hover,
+	//&:focus,
+	//&:active {
+	//	background-color: $primary;
+	//	border-color: $primary;
+	//	color: $w;
+	//}
 }
 
 .btn-outline-secondary {
-	background-color: transparent;
-	border-color: $secondary;
-	color: $secondary;
+	border-color: $neutral-purple-400;
 
-	&:hover,
-	&:focus,
-	&:active {
-		background-color: $secondary;
-		border-color: $secondary;
-		color: $w;
-	}
+
+	//&:hover,
+	//&:focus,
+	//&:active {
+	//	background-color: $secondary;
+	//	border-color: $secondary;
+	//	color: $w;
+	//}
+}
+
+.btn-text-white {
+	color: $w;
 }
 
 // Label styled as button

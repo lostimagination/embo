@@ -36,7 +36,7 @@ import { it_scroll_navigation } from './components/_anchors-bar';
  * Import custom functions for vendor libraries.
  */
 import { it_nice_select } from './libraries/_nice-select';
-import { it_swiper } from './libraries/_swiper';
+import { initializeSliders } from './libraries/_swiper';
 import { it_fancybox } from './libraries/_fancybox';
 
 $(document).ready(function () {
@@ -52,7 +52,7 @@ $(document).ready(function () {
 	it_cf7_example_event();
 	it_fix_full_height();
 	it_nice_select();
-	it_swiper();
+	initializeSliders();
 	it_fancybox();
 	it_scroll_navigation();
 

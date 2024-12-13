@@ -1,13 +1,5 @@
 'use strict';
 
-/*
- * Import Swiper bundle with all modules installed.
- *
- * Available Swiper.js modules = [Virtual, Keyboard, Mousewheel, Navigation,
- * Pagination, Scrollbar, Parallax, Zoom, Lazy, Controller, A11y, History,
- * HashNavigation, Autoplay, Thumbs, FreeMode, Grid, Manipulation, EffectFade,
- * EffectCube, EffectFlip, EffectCoverflow, EffectCreative, EffectCards]
- */
 import Swiper, {
 	Navigation,
 	Pagination,
@@ -15,37 +7,83 @@ import Swiper, {
 	Thumbs,
 } from 'swiper/bundle';
 
-export const it_swiper = () => {
-	const sliders = document.querySelectorAll('.swiper-images');
+const sliderConfigs = {
+	reviews: {
+		selector: '.slide-reviews',
+		wrapperSelector: '.review-slider-wrapper',
+		options: {
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			autoplay: false,
+			pagination: {
+				el: '.swiper-pagination',
+				enabled: true,
+				clickable: true
+			},
+		}
+	},
+};
 
-	if (sliders.length < 1) {
-		return;
-	}
+const initializeSliderType = (config) => {
+	const sliders = document.querySelectorAll(config.selector);
+
+	if (sliders.length === 0) return;
 
 	sliders.forEach((slider) => {
-		new Swiper(slider, {
-			loop: true,
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: slider.querySelector('.swiper-pagination'),
-				clickable: true,
-			},
+		const sliderWrapper = slider.closest(config.wrapperSelector);
+		if (!sliderWrapper) return;
+
+		const swiperConfig = {
+			...config.options,
 			navigation: {
 				enabled: true,
-				nextEl: slider.querySelector('.swiper-button-next'),
-				prevEl: slider.querySelector('.swiper-button-prev'),
+				nextEl: sliderWrapper.querySelector('.swiper-button-next'),
+				prevEl: sliderWrapper.querySelector('.swiper-button-prev'),
 			},
 			on: {
-				// lazy load images
 				slideChange() {
 					try {
 						lazyLoadInstance.update();
-					} catch (e) {}
+					} catch (e) {
+						console.warn('LazyLoad instance not available:', e);
+					}
 				},
 			},
-		});
+		};
+
+		if (config.options.pagination?.enabled) {
+			swiperConfig.pagination = {
+				el: sliderWrapper.querySelector('.swiper-pagination'),
+				...config.options.pagination.options
+			};
+		}
+		const paginationOverride = slider.dataset.pagination === 'false' ? false :
+			slider.dataset.pagination === 'true' ? true : null;
+
+		if (paginationOverride !== null) {
+			if (paginationOverride) {
+				swiperConfig.pagination = {
+					el: sliderWrapper.querySelector('.swiper-pagination'),
+					...config.options.pagination?.options
+				};
+			} else {
+				delete swiperConfig.pagination;
+			}
+		}
+
+		new Swiper(slider, swiperConfig);
 	});
+};
+
+export const initializeSliders = () => {
+	Object.values(sliderConfigs).forEach(initializeSliderType);
+};
+
+export const initializeSpecificSlider = (sliderType) => {
+	if (sliderConfigs[sliderType]) {
+		initializeSliderType(sliderConfigs[sliderType]);
+	} else {
+		console.warn(`Slider type "${sliderType}" not found in configurations`);
+	}
 };
