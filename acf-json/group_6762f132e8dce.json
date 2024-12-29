@@ -1,13 +1,13 @@
 {
-    "key": "group_67589b33923b3",
-    "title": "Module: Testimonials",
+    "key": "group_6762f132e8dce",
+    "title": "Module:  Team",
     "fields": [
         {
-            "key": "field_67589b340812e",
-            "label": "Background color",
-            "name": "background_color",
+            "key": "field_6762f13315b76",
+            "label": "Title section",
+            "name": "title_section",
             "aria-label": "",
-            "type": "select",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,25 +16,39 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "turquois": "Secondary turquois 50;",
-                "beige": "Neutral beige 450;",
-                "purple": "Neutral purple 50;",
-                "primary": "Primary 150;"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "clone": [
+                "group_62d66dab345b6"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
-            "key": "field_675c4746018a1",
-            "label": "Testimonials",
-            "name": "testimonials",
+            "key": "field_67642b2f4d7bd",
+            "label": "Columns",
+            "name": "columns",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "three \/two",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6762f23615b77",
+            "label": "Team member",
+            "name": "team_member",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -53,7 +67,7 @@
                 "post_type",
                 "taxonomy"
             ],
-            "return_format": "id",
+            "return_format": "object",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
@@ -80,5 +94,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734111328
+    "modified": 1734618568
 }

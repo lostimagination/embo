@@ -150,6 +150,70 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6762f2df39395": {
+                    "key": "layout_6762f2df39395",
+                    "name": "team",
+                    "label": "Team",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6762f2e739398",
+                            "label": "Team clone",
+                            "name": "team_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6762f132e8dce"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_676449d2230f9": {
+                    "key": "layout_676449d2230f9",
+                    "name": "circle_tabs",
+                    "label": "Circle tabs",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67644a23230fc",
+                            "label": "Circle tabs clone",
+                            "name": "circle_tabs_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6764394362626"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_63b81f6380623": {
                     "key": "layout_63b81f6380623",
                     "name": "faq",
@@ -455,5 +519,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733860692
+    "modified": 1734970276
 }
