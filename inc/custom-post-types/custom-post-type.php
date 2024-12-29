@@ -54,6 +54,73 @@ function it_custom_init(): void {
 
 	register_post_type( 'course', $args );
 
+//	CPT: Reviews
+	$labels = array(
+		'name'          => esc_html__( 'Reviews', '_it_start' ),
+		'singular_name' => esc_html__( 'Review', '_it_start' ),
+	);
+
+	$args = array(
+		'label'               => esc_html__( 'Review', '_it_start' ),
+		'labels'              => $labels,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'rest_base'           => '',
+		'has_archive'         => false,
+		'menu_icon'           => 'dashicons-format-quote',
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_rest'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => false,
+		'rewrite'             => array(
+			'slug'       => 'review',
+			'with_front' => true,
+		),
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+	);
+
+	register_post_type( 'review', $args );
+
+	//	CPT: Team
+	$labels = array(
+		'name'          => esc_html__( 'Team', '_it_start' ),
+		'singular_name' => esc_html__( 'Team', '_it_start' ),
+	);
+
+	$args = array(
+		'label'               => esc_html__( 'Team', '_it_start' ),
+		'labels'              => $labels,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'rest_base'           => '',
+		'has_archive'         => false,
+		'menu_icon'           => 'dashicons-buddicons-buddypress-logo',
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_rest'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => false,
+		'rewrite'             => array(
+			'slug'       => 'team',
+			'with_front' => true,
+		),
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+	);
+
+	register_post_type( 'team', $args );
+
+
 	// Taxonomy: Example Category.
 	register_taxonomy(
 		'course-type',

@@ -1,0 +1,24 @@
+.headline {
+	padding: rem(60 0);
+	@include min(lg) {
+		padding: rem(120 0);
+	}
+
+	.js-tab-title.is-active {
+		color: $neutral-purple-700;
+	}
+
+	.tabs-info {
+		margin-top: rem(22);
+
+		p {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.button-center {
+	margin-top: rem(58);
+	display: flex;
+	justify-content: center;
+}

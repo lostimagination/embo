@@ -22,7 +22,7 @@
 	// layout: Horizontal
 	&--horizontal {
 
-		.tabs__titles {
+		.tabs-titles {
 			display: flex;
 			flex-wrap: wrap;
 			gap: rem(30);
@@ -33,7 +33,7 @@
 	&--vertical {
 		display: flex;
 
-		.tabs__titles {
+		.tabs-titles {
 			flex: 0 0 rem(200);
 			display: flex;
 			flex-direction: column;

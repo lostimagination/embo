@@ -9,8 +9,8 @@ import Swiper, {
 
 const sliderConfigs = {
 	reviews: {
-		selector: '.slide-reviews',
-		wrapperSelector: '.review-slider-wrapper',
+		wrapperSelector: '.testimonials-slider-wrapper',
+		selector: '.slide-testimonials',
 		options: {
 			loop: true,
 			slidesPerView: 1,
@@ -23,7 +23,23 @@ const sliderConfigs = {
 			},
 		}
 	},
+	company: {
+		wrapperSelector: '.gallery-slider-wrapper',
+		selector: '.slide-gallery',
+		options: {
+			loop: true,
+			slidesPerView: 5,
+			spaceBetween: 135,
+			autoplay: false,
+			pagination: {
+				el: '.swiper-pagination',
+				enabled: true,
+				clickable: true
+			},
+		}
+	},
 };
+
 
 const initializeSliderType = (config) => {
 	const sliders = document.querySelectorAll(config.selector);

@@ -1,0 +1,52 @@
+.team {
+	padding: rem(60 0);
+	.c-title{
+		margin-bottom: rem(50);
+	}
+}
+
+.team-member-image {
+	position: relative;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background-color: $neutral-purple-700;
+	@include min(md) {
+		width: 64.8%;
+	}
+
+	&:after {
+		padding-bottom: 100%;
+		content: '';
+		display: block;
+	}
+}
+
+.person-name {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: rem(12);
+
+	&__title {
+		margin: rem(0 10px 0 0);
+		color: $neutral-purple-700;
+		line-height: 1.2;
+	}
+
+	&__degree {
+		font-weight: 700;
+		font-family: 'Poppins', sans-serif;
+		font-size: rem(18);
+	}
+
+	&__job {
+		font-family: 'Roboto', sans-serif;
+		font-size: rem(18);
+	}
+}
+.person-content{
+	p{
+		margin-bottom: 0;
+	}
+}
