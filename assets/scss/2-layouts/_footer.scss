@@ -19,7 +19,7 @@
 
 	&__copyright {
 		font-size: rem(14);
-		margin-top: rem(30);
+		margin-top: rem(51);
 		text-align: center;
 
 		@include min(lg) {
@@ -49,7 +49,7 @@
 		text-decoration: underline;
 		font-size: rem(20);
 		font-weight: 700;
-		font-family: 'Poppins', sans-serif;
+		font-family: $font-heading;
 
 		&:hover {
 			color: $primary;
@@ -87,17 +87,25 @@
 	p {
 		margin-bottom: 0;
 	}
+	a{
+		color: $w;
+
+	}
 }
-.footer-padding{
+
+.footer-padding {
 	padding-left: rem(10);
 }
+
 .footer-title {
 	text-decoration: underline;
 	font-size: rem(20);
 	font-weight: 700;
-	font-family: 'Poppins', sans-serif;
+	font-family: $font-heading;
 	margin-bottom: rem(22);
-	&__socials{
+	line-height: 1;
+
+	&__socials {
 		text-decoration: none;
 		margin-bottom: rem(49);
 	}
@@ -107,6 +115,13 @@
 .footer-list {
 	margin-bottom: rem(8);
 	text-decoration: underline;
+}
+
+.socials-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .footer-socials {
@@ -122,4 +137,64 @@
 		height: 18px;
 		width: 17px;
 	}
+}
+
+.footer-title-form {
+	font-family: $font-heading;
+	font-weight: 700;
+	font-size: rem(22);
+	margin-bottom: rem(27);
+}
+
+.footer-form {
+
+	label {
+		display: flex;
+		align-items: center;
+		background-color: $w;
+		border-radius: 50px;
+		border: 8px solid $w;
+		overflow: hidden;
+	}
+
+	input {
+		border-radius: 0;
+		border: none;
+
+		&::placeholder {
+			font-family: $font-heading;
+			color: $neutral-purple-300;
+		}
+	}
+
+	.wpcf7 .wpcf7-form-control-wrap {
+		margin-bottom: 0;
+	}
+
+	input[type=submit] {
+		height: 54px;
+		padding: rem(18 24);
+		font-weight: 700;
+	}
+}
+.wrapper-copyright{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top:  1px solid $light-grey;
+	padding: rem(31 20 50 );
+	a:first-of-type {
+		margin-right: rem(40);
+	}
+}
+.footer-copyright{
+	margin-right: rem(50);
+	p{
+		margin-bottom: 0;
+	}
+
+}
+.copyright-link{
+	font-size: rem(18);
+	color: $w;
 }
