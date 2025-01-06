@@ -20,6 +20,7 @@ $title_list     = get_field( 'title_list', 'options' );
 $title_socials  = get_field( 'title_socials', 'options' );
 $title_form     = get_field( 'title_form', 'options' );
 $footer_form    = get_field( 'footer_form', 'options' );
+$copyright      = get_field( 'copyright', 'options' );
 
 $enable_to_top = get_field( 'enable_to_top', 'options' );
 ?>
@@ -92,48 +93,70 @@ $enable_to_top = get_field( 'enable_to_top', 'options' );
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<div class="footer-padding">
+				<div class="footer-padding socials-form">
 					<?php if ( $title_socials ) : ?>
-
+					<div>
 						<div class="footer-title footer-title__socials">
 							<?php echo $title_socials ?>
 						</div>
-					<?php endif; ?>
+						<?php endif; ?>
 
-					<?php if ( have_rows( 'icons_socials', 'options' ) ) : ?>
-						<?php while ( have_rows( 'icons_socials', 'options' ) ) : the_row(); ?>
-							<?php
-							$link_socials = get_sub_field( 'link_socials' );
-							$icon_socials = get_sub_field( 'icon_socials' );
-							?>
-							<a href="<?php echo $link_socials ?>">
-								<?php if ( $icon_socials ) : ?>
-									<div class="footer-socials">
-										<?php echo wp_get_attachment_image( $icon_socials['id'], 'thumbnail', false, array( 'class' => '' ) ); ?>
-									</div>
-								<?php endif; ?>
-							</a>
-						<?php endwhile; ?>
-					<?php endif; ?>
+						<?php if ( have_rows( 'icons_socials', 'options' ) ) : ?>
+							<?php while ( have_rows( 'icons_socials', 'options' ) ) : the_row(); ?>
+								<?php
+								$link_socials = get_sub_field( 'link_socials' );
+								$icon_socials = get_sub_field( 'icon_socials' );
+								?>
+								<a href="<?php echo $link_socials ?>">
+									<?php if ( $icon_socials ) : ?>
+										<div class="footer-socials">
+											<?php echo wp_get_attachment_image( $icon_socials['id'], 'thumbnail', false, array( 'class' => '' ) ); ?>
+										</div>
+									<?php endif; ?>
+								</a>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+					<div>
+						<?php if ( $title_form ) : ?>
+							<p class="footer-title-form"><?php echo esc_html( $title_form ) ?></p>
+						<?php endif; ?>
 
-					<?php if ( $title_form ) : ?>
-						<p><?php echo esc_html( $title_form ) ?></p>
-					<?php endif; ?>
-
-					<?php if ( $footer_form ) : ?>
-						<?php echo do_shortcode($footer_form); ?>
-					<?php endif; ?>
+						<?php if ( $footer_form ) : ?>
+							<div class="footer-form"><?php echo do_shortcode( $footer_form ); ?></div>
+						<?php endif; ?>
+					</div>
 				</div>
+
 			</div>
 		</div>
-
 
 		<?php get_template_part( 'template-parts/socials' ); ?>
 	</div>
 
 	<div class="site-footer__copyright">
 		<div class="container">
-			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'All rights reserved', '_it_start' ); ?></span>
+			<!--			<span>&copy; --><?php //echo esc_html( gmdate( 'Y' ) ); ?><!-- -->
+			<?php //esc_html_e( 'All rights reserved', '_it_start' ); ?><!--</span>-->
+			<div class="wrapper-copyright">
+				<?php if ( $copyright ) : ?>
+					<div class="footer-copyright">
+						<?php echo wp_kses_post( $copyright ); ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( have_rows( 'copyright_links', 'options' ) ) : ?>
+					<?php while ( have_rows( 'copyright_links', 'options' ) ) : the_row(); ?>
+						<?php if ( $link = get_sub_field( 'link' ) ) :
+							$link_target = $link['target'] ? $link['target'] : '_self'; ?>
+							<a  class="copyright-link" target="<?php echo esc_attr( $link_target ); ?>"
+							   href="<?php echo esc_url( $link['url'] ); ?>">
+								<?php echo $link['title'] ?>
+							</a>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </footer>
